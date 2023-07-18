@@ -100,22 +100,23 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //problem here 
-     public function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|unique:products,'. $id,          
+            'name'=>'required',
             'price'=>'required',  
             'quantity'=>'required',
+            
         ]);
        
         try{
-            $this->productService->updateProduct(
+           $this->productService->updateProduct(
             $id,
             [
                 'name'=>$request->name,
                 'price'=>$request->price, 
-                'quantity'=>$request->quantity, 
+                'quantity'=>$request->quantity,
+                
             ]);
             return response([
                 'success'=>true, 

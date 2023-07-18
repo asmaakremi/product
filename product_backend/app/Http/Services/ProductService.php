@@ -26,10 +26,10 @@ class ProductService
         return !is_null($product) ? $product:throw new Exception('Product Not Found ');  
     }
 
-    public function updateProduct($id,array $updatedProductDetails){
+    public function updateProduct($id, array $updatedProductDetails){
         $product=$this->getProductById($id);
         DB::beginTransaction();
-        $product->update($updatedProductDetails);
+        $this->productRepository->updateProduct($product,$updatedProductDetails);
         DB::commit();
     }
     public function deleteProduct($id){
