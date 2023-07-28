@@ -1,17 +1,28 @@
-import React from "react";
-import { filteredProducts } from "../../recoil/productRecoil";
-import { useRecoilValue } from "recoil";
-import ProductItem from "./ProductItem";
+import React, { useState } from 'react';
+import {
+  AvailableProducts,
+  ProductsSummary,
+  SearchProducts,
+} from './';
 
 const Products = () => {
-  // const products = useRecoilValue(productState);
-  const products = useRecoilValue(filteredProducts);
+  const [name, setName] = useState('');
+  const [price, setPrice] = useState('');
+  const [quantity, setQuantity] = useState('');
+
+  const handleSearch = (name, price, quantity) => {
+    setName(name);
+    setPrice(price);
+    setQuantity(quantity);
+  };
+  
+
   return (
-    <div className="columns is-multiline">
-      {products.map((product) => (
-        <ProductItem product={product} key={product.id} />
-      ))}
-    </div>
+    <>
+      <ProductsSummary />
+      <SearchProducts onSearch={handleSearch} />
+      <AvailableProducts name={name} price={price} quantity={quantity} />
+    </>
   );
 };
 

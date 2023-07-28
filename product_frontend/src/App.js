@@ -1,15 +1,32 @@
-import './App.css';
-import {Router , Route} from "react-router-dom";
-import {AddProduct , EditProduct} from "./components/products";
+import { Fragment, useState } from 'react';
+
+// import Header from './components/Layout/Header';
+// import Products from './components/Products/Products';
+// import Cart from './components/Cart/Cart';
+
+import {Header} from "./components/layout";
+import { Products } from './components/products';
+import { Cart } from './components/Cart';
+
 function App() {
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+
   return (
-    <>
-    <Router>
-      <Route exact path="/" component={<Home/>} />
-      <Route exact path="/addProduct" component={<AddProduct/>} />
-      <Route exact path="/editProduct/:id" component={<EditProduct/>} />
-    </Router>
-    </>
+    <Fragment>
+      {cartIsShown && <Cart onClose={hideCartHandler} action="Add" />}
+      <Header onShowCart={showCartHandler} />
+      <main>
+        <Products />
+      </main>
+    </Fragment>
   );
 }
 

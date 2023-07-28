@@ -1,10 +1,16 @@
-import Products from "./Products" ; 
-import ProductItem from "./ProductItem";
-import EditProduct from "./EditProduct";
-import AddProduct from "./AddProduct";
-export  {
-    Products ,  
-    ProductItem , 
-    EditProduct ,  
-    AddProduct,
-}
+// Products/index.js
+import AvailableProducts from "./AvailableProducts";
+import Products from "./Products";
+import ProductsSummary from "./ProductsSummary";
+import SearchProducts from "./SearchProducts";
+import { ProductItem } from "./ProductItems";
+import {ProductItemForm}  from "./ProductItems";
+
+export {
+  AvailableProducts,
+  ProductItem,
+  Products,
+  ProductItemForm,
+  ProductsSummary,
+  SearchProducts,
+};
