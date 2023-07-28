@@ -1,9 +1,12 @@
-import Card from '../UI/Card';
-import ProductItem from './ProductItems/ProductItem';
+import {Card} from '../UI';
+import {ProductItem} from "./";
 import classes from './AvailableProducts.module.css';
 import { useState , useEffect } from 'react';
-import productService from '../../services/product-service';
+import { productService } from '../../services';
 import {AiOutlineLoading3Quarters} from "react-icons/ai";
+
+
+
 const AvailableProducts = (props) => {
   const [products, setProducts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);

@@ -1,4 +1,4 @@
-import ProductItemForm from './ProductItemForm';
+import {ProductItemForm} from "./";
 import classes from './ProductItem.module.css';
 
 const ProductItem = (props) => {

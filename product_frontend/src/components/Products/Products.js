@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import ProductsSummary from './ProductsSummary';
-import SearchProducts from './SearchProducts';
-import AvailableProducts from './AvailableProducts';
+import {
+  AvailableProducts,
+  ProductsSummary,
+  SearchProducts,
+} from './';
 
 const Products = () => {
   const [name, setName] = useState('');

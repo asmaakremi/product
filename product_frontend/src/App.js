@@ -1,8 +1,12 @@
 import { Fragment, useState } from 'react';
 
-import Header from './components/Layout/Header';
-import Products from './components/Products/Products';
-import Cart from './components/Cart/Cart';
+// import Header from './components/Layout/Header';
+// import Products from './components/Products/Products';
+// import Cart from './components/Cart/Cart';
+
+import {Header} from "./components/Layout";
+import { Products } from './components/Products';
+import { Cart } from './components/Cart';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);

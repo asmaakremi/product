@@ -21,7 +21,7 @@ const fetchProducts = (name, quantity , price) => {
 const getProductDetails = (id) => {
   return axios.get(API_URL + id, config);
 };
-const addProduct = (name, quantity , price) => {
+const addProduct = ({name, quantity , price}) => {
     return axios.post(
       API_URL,
       {
@@ -32,7 +32,8 @@ const addProduct = (name, quantity , price) => {
   };
 
 
-  const editProduct = (id ,name, quantity , price) => {
+  const editProduct = (id,{name, quantity , price}) => {
+    console.log({id ,name, quantity , price});
     return axios.put(
       API_URL+id,
       {
@@ -45,6 +46,8 @@ const addProduct = (name, quantity , price) => {
   const deleteProduct = (id) => {
     return axios.delete(API_URL + id, config);
   };
+
+  
 const productService = {
     getProductDetails,
     fetchProducts,

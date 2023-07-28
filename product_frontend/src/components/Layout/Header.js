@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import HeaderCartButton from './HeaderCartButton';
+import {HeaderCartButton} from './';
 import productImage from '../../assets/ee.avif';
 import classes from './Header.module.css';
 

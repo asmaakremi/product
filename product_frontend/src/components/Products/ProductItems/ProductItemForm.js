@@ -1,8 +1,8 @@
-import Input from '../../UI/Input';
 import classes from './ProductItemForm.module.css';
 import { useState  } from 'react';
-import Cart from '../../Cart/Cart';
-import productService from '../../../services/product-service';
+import { Cart  } from '../../Cart';
+import { productService } from '../../../services';
+
 
 const ProductItemForm = (props) => {
   const [cartIsShown, setCartIsShown] = useState(false);

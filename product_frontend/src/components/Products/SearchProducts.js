@@ -27,7 +27,7 @@ const SearchProducts = (props) => {
         <div className={classes.search__container}>
         <div className={classes.search__input}>
           <AiOutlineSearch className={classes.icon} />
-          <input
+            <input
             type="text"
             className=""
             placeholder="Search product's name"
